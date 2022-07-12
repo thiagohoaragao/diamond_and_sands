@@ -5,15 +5,15 @@
 
 expression = '<<.<<..>><>><.>.>.<<.>.<.>>>><>><>>'
 
-#excluir as areias(.)
+# excluir as areias(.)
 expression = expression.delete('.')
-#acumulador de diamonds
+# acumulador de diamonds
 diamonds = 0
 
 puts expression
 while expression.scan(/<>/).count > 0
   extracted_diamonds = expression.scan(/<>/).count
-  #somar diamantes extraidos
+  # somar diamantes extraidos
   diamonds += extracted_diamonds
   expression = expression.gsub(/<>/, '')
 end
